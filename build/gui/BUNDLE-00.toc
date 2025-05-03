@@ -1,0 +1,3 @@
+([('gui',
+   '/Users/sanjarmaxmudov/PycharmProjects/pdf_contertor/dist/gui',
+   'EXECUTABLE')],)
