@@ -18,10 +18,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pyinstaller
+          pip install -r requirements.txt
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile gui.py
+          pyinstaller --noconfirm --onefile gui.py \
+            --hidden-import=pdfplumber \
+            --hidden-import=pdfminer.six \
+            --hidden-import=pandas \
+            --hidden-import=numpy \
+            --hidden-import=openpyxl \
+            --hidden-import=pypdfium2
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
